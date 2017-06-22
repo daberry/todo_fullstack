@@ -1,1 +1,15 @@
+
+<div class="search">
+  <input
+    ng-model="$ctrl.curOwner"
+    class="form-control"
+    type="text"
+  />
+  <input
+    ng-model="$ctrl.curTodo"
+    class="form-control"
+    type="text"
+  />
+  <button class="button" ng-click="$ctrl.clickHandler($ctrl.curOwner, $ctrl.curTodo)">Submit</button>
+</div>
 <p>im from todoInput</p>
