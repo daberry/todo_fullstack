@@ -8,13 +8,13 @@ var handler = require('./lib/request-handler');
 
 var app = express();
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.use(partials());
+app.set('views', __dirname + '/views'); //find all the views file inside the dir path.
+app.set('view engine', 'ejs'); //use the ejs engine
+app.use(partials()); //line 13-15 is a middleware to transpile json to JS object.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/client'));  //look into /client for static file
 
 
 app.get('/', handler.getIndex);
